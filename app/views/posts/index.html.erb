@@ -1,0 +1,18 @@
+<div>
+  <%= render "shared/search_bar" %>
+
+  <div class="container">
+    <% if @posts.suggestions.any? %>
+      Did you mean?
+      <ul>
+        <% @posts.suggestions.each do |suggest| %>
+          <li>
+            <%= link_to "#{suggest}", posts_path(search: suggest) %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <%= render @posts %>
+    <%= will_paginate @posts %>
+  </div>
+</div>
