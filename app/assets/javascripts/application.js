@@ -13,6 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap/dist/js/bootstrap
+//= require lib/angular
+//= require i18n/translations
 //= require_tree .
 
 

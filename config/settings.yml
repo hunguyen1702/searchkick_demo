@@ -1,3 +1,7 @@
 post:
   fractment_size: 20
-  page: 20
+  page: 8
+  inner_window: 1
+  highlight_tag: "<strong>"
+author:
+  number_of_most_active: 6

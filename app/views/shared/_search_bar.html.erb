@@ -1,9 +1,13 @@
 <ul class="navbar navbar-light bg-light justify-content-between">
-  <a class="navbar-brand">Navbar</a>
+  <%= link_to t("post.brand"), root_path, class: "navbar-brand" %>
 
   <%= form_tag(posts_path, {class: "form-inline", method: :get}) do %>
-    <%= text_field_tag "search", params[:search], id: "post_search", class: "form-control mr-sm-2", placeholder: "Search",
+    <%= text_field_tag t("post.search"), params[:search], id: "post_search",
+      class: "form-control mr-sm-2", placeholder: t("post.search"),
       "aria-label": "Search" %>
-    <%= submit_tag "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
+    <%= submit_tag t("post.search").capitalize,
+      class: "btn btn-outline-success my-2 my-sm-0" %>
   <% end %>
 </ul>
+
+

@@ -1,4 +1,15 @@
-<div class="row">
-  <p><%= post.author.name %></p>
-  <p><%= truncate post.content, length: 1000 %></p>
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">
+      <%= link_to post.title.html_safe, post_path(post) %>
+    </h2>
+    <p class="card-text">
+      <%= truncate(post.content, length: 1000, escape: false) %>
+    </p>
+    <%= link_to t("post.read_more"), post_path(post), class: "btn btn-primary" %>
+  </div>
+  <div class="card-footer text-muted">
+    <%= t("post.posted_at", {time: time_ago_in_words(post.updated_at),
+      author_name: link_to(post.author.name, author_path(post.author))}).html_safe %>
+  </div>
 </div>
