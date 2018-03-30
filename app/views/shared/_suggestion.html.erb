@@ -1,0 +1,14 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">
+      <%= t "post.suggestion" %>
+    </h2>
+    <p class="card-text">
+      <ul>
+        <% suggestions.each do |suggestion| %>
+          <li><%= link_to suggestion, posts_path(search: suggestion) %></li>
+        <% end %>
+      </ul>
+    </p>
+  </div>
+</div>

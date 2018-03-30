@@ -1,0 +1,15 @@
+<div class="card mb-4" ng-repeat="post in posts track by $index">
+  <div class="card-body">
+    <h2 class="card-title">
+      <a ng-href="/posts/{{post.id}}" ng-bind="post.title"></a>
+    </h2>
+    <p class="card-text" ng-bind="post.content | limitTo:1000"></p>
+    <a ng-href="/posts/{{post.id}}" class="btn btn-primary">
+      <%= t("post.read_more") %>
+    </a>
+  </div>
+  <div class="card-footer text-muted">
+    <!-- Make directive here -->
+    Posted at <span am-time-ago="post.updated_at"></span> by <a ng-href="/author/{{post.author_id}}">{{post.author.name}}</a>
+  </div>
+</div>

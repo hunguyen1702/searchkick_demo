@@ -1,0 +1,20 @@
+<div class="col-md-4">
+  <div class="card my-4">
+    <h5 class="card-header">
+      <%= t "author.most_active" %>
+    </h5>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="list-unstyled mb-0">
+            <% @active_authors.each do |author| %>
+              <li>
+                <%= link_to author.name, author_path(author) %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

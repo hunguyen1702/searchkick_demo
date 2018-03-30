@@ -1,0 +1,8 @@
+en:
+  post:
+    brand: "Demo Searchkick"
+    search: "search"
+    read_more: "Read more..."
+    posted_at: "Posted %{time} ago by %{author_name}"
+    all_posts: "All posts"
+    suggestion: "Did you mean?"

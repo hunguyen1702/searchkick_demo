@@ -1,0 +1,14 @@
+<div class="card mb-4">
+  <div class="card-body">
+    <h2 class="card-title">
+      <%= t "post.suggestion" %>
+    </h2>
+    <p class="card-text">
+      <ul>
+        <li ng-repeat="suggestion in suggestions track by $index">
+          <a href="" ng-bind="suggestion" ng-click="search(null, suggestion)"></a>
+        </li>
+      </ul>
+    </p>
+  </div>
+</div>
