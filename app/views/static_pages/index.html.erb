@@ -1,12 +1,18 @@
-<div ng-app="app">
-  <div ng-controller="PostsController">
-    <div ng-if="suggestions">
-      <ul>
-        <li ng-repeat="suggestion in suggestions track by $index" ng-bind="suggestion"></li>
-      </ul>
+<div ng-app="app" class="container">
+  <div ng-controller="PostsController" class="row">
+    <div class="col-md-8">
+      <div ng-if="error">
+        <div class="alert alert-danger">
+          <p ng-bind="error"></p>
+        </div>
+      </div>
+      <div ng-if="suggestions.length">
+        <%= render "suggestion" %>
+      </div>
+      <h1 class="my-4">
+        <%= t "post.all_posts" %>
+      </h1>
+      <%= render "post" %>
     </div>
-    <ul>
-      <li ng-repeat="post in posts track by $index" ng-bind="post.title"></li>
-    </ul>
   </div>
 </div>

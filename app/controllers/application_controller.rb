@@ -8,7 +8,12 @@ class ApplicationController < ActionController::Base
 
     respond_to do |format|
       format.json do
-        render json: {posts: @posts, suggestions: @posts.suggestions}
+        render json: {
+          posts: @posts.as_json(include: {
+            author: {only: :name}
+          }),
+          suggestions: @posts.suggestions
+        }
       end
       format.html
     end
