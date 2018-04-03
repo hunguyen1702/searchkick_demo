@@ -1,0 +1,8 @@
+<ul class="navbar navbar-light bg-light justify-content-between">
+  <%= link_to t("post.brand"), root_path, class: "navbar-brand" %>
+  <form class="form-inline">
+    <input type="text" placeholder="search"
+      aria-label="Search" ng-model="query" id="post_search"
+      ng-change="search(query)" class="form-control mr-sm-2">
+  </form>
+</ul>

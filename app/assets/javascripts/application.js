@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap/dist/js/bootstrap
 //= require lib/angular
+//= require lib/angular-animate
+//= require lib/angular-touch
+//= require bootstrap/dist/js/bootstrap
+//= require lib/ui-bootstrap
 //= require lib/moment
 //= require lib/angular-moment.min
 //= require i18n/translations

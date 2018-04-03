@@ -1,8 +1,8 @@
 angular.module('app').factory('posts', function($q, $http){
-  return function(page, search){
+  return function(search){
     var def = $q.defer();
 
-    $http({method: 'GET', url: '/posts.json', params: {page: page, search: search}})
+    $http({method: 'GET', url: '/static_pages/posts.json', params: {search: search}})
       .then(function(response){
         def.resolve(response.data);
       }, function(response){

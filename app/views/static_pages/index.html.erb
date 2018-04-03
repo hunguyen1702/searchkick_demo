@@ -1,18 +1,23 @@
 <div ng-app="app" class="container">
-  <div ng-controller="PostsController" class="row">
-    <div class="col-md-8">
-      <div ng-if="error">
-        <div class="alert alert-danger">
-          <p ng-bind="error"></p>
+  <div ng-controller="PostsController">
+    <%= render "search_bar" %>
+    <div class="row">
+      <div class="col-md-8">
+        <div ng-if="error">
+          <div class="alert alert-danger">
+            <p ng-bind="error"></p>
+          </div>
         </div>
+        <div ng-if="suggestions.length">
+          <%= render "suggestion" %>
+        </div>
+        <h1 class="my-4">
+          <%= t "post.all_posts" %>
+        </h1>
+        <%= render "post" %>
+        <uib-pagination total-items="totalItems" ng-model="currentPage" items-per-page="itemsPerPage" max-size="maxSize" boundary-links="true" rotate="false"></uib-pagination>
       </div>
-      <div ng-if="suggestions.length">
-        <%= render "suggestion" %>
-      </div>
-      <h1 class="my-4">
-        <%= t "post.all_posts" %>
-      </h1>
-      <%= render "post" %>
+      <%= render "shared/active_authors" %>
     </div>
   </div>
 </div>

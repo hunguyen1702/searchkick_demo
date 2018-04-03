@@ -12,6 +12,14 @@ class Post < ActiveRecord::Base
     end
   end)
 
+  scope :all_post_match_with, (lambda do |search_query|
+    if search_query.nil?
+      search
+    else
+      search search_query, search_options
+    end
+  end)
+
   def search_data
     {
       title: title,
